@@ -86,7 +86,6 @@ namespace Makanan_Minuman
         private void listBoxInput_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBoxInput.SelectionMode = SelectionMode.MultiExtended;
-            
         }
 
         private void buttonSalin_Click(object sender, EventArgs e)
@@ -205,5 +204,6 @@ namespace Makanan_Minuman
                 }
             }
         }
+
     }
 }
