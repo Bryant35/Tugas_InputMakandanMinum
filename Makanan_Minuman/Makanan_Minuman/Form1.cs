@@ -14,6 +14,8 @@ namespace Makanan_Minuman
     {
         int countmakan = 0;
         int countminum = 0;
+        string[] makanan = new string[30];
+        string[] minuman = new string[30];
         public Form1()
         {
             InitializeComponent();
@@ -62,20 +64,37 @@ namespace Makanan_Minuman
         {
 
         }
-        
-        string[] makanan = new string[30];
-        string[] minuman = new string[30];
-        
+
         private void buttonInput_Click(object sender, EventArgs e)
         {
             
-            if (radioButtonMakanan.Checked == true)
+            string condition = "";
+            int i = 0;
+            foreach (object countinput in listBoxInput.Items)
+            {
+                if(textBoxItem.Text == listBoxInput.Items[i].ToString())
+                {
+                    for (int j = 0; j <= listBoxInput.Items.Count; j++)
+                    {
+                        if(makanan[j] == textBoxItem.Text)
+                        {
+                            MessageBox.Show("Item Cannot be the same !");
+                            condition = "same";
+                            break;
+                        }
+                    }
+                    
+                }
+                i++;
+            }
+
+            if (radioButtonMakanan.Checked == true && condition != "same")
             {
                 makanan[countmakan] = textBoxItem.Text;
                 listBoxInput.Items.Add(makanan[countmakan]);
                 countmakan++;
             }
-            else if(radioButtonMinuman.Checked == true)
+            else if(radioButtonMinuman.Checked == true && condition != "same")
             {
                 minuman[countminum] = textBoxItem.Text;
                 listBoxInput.Items.Add(minuman[countminum]);
@@ -83,54 +102,87 @@ namespace Makanan_Minuman
             }
         }
 
-        private void listBoxInput_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            listBoxInput.SelectionMode = SelectionMode.MultiExtended;
-        }
-
         private void buttonSalin_Click(object sender, EventArgs e)
         {
-            string[] list = listBoxInput.Items.OfType<string>().ToArray();
-            int listcount = listBoxInput.SelectedItems.Count;
+            //string[] list = listBoxInput.Items.OfType<string>().ToArray();
+            
+
+            //if (listBoxInput.SelectedItem == list[listcount])
+            //{
+            //    //string result = string.Join(",", list[listBoxInput.SelectedIndex]);
+            //    listBoxList.Items.Add(listBoxInput.SelectedItem);
+            //}
+
+            foreach(object makanan in listBoxInput.SelectedItems)
+            {
+                listBoxList.Items.Add(makanan);
+            }
             //for (int i = 0; i < listcount; i++)
             //{
-            //    string result = string.Join(",", list[listBoxInput.SelectedIndex]);
-            //    listBoxList.Items.Add(result);
+            //    if (listBoxInput.SelectedItem == makanan[i])
+            //    {
+            //        //string result = string.Join(",", list[listBoxInput.SelectedIndex]);
+            //        listBoxList.Items.Add(listBoxInput.SelectedItem);
+            //    }
+            //    else if (listBoxInput.SelectedItem == minuman[i])
+            //    {
+            //        string result = string.Join(",", list[listBoxInput.SelectedIndex]);
+            //        listBoxList.Items.Add(result);
+            //    }
             //}
-            for (int i = 0; i < listcount; i++)
-            {
-                if (listBoxInput.SelectedIndex > -1 && listBoxInput.SelectedItem == makanan[i])
-                {
-                    //string result = string.Join(",", list[listBoxInput.SelectedIndex]);
-                    listBoxList.Items.Add(listBoxInput.SelectedItem);
-                }
-                else if (listBoxInput.SelectedIndex > -1 && listBoxInput.SelectedItem == minuman[i])
-                {
-                    string result = string.Join(",", list[listBoxInput.SelectedIndex]);
-                    listBoxList.Items.Add(result);
-                }
-            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             int recountfood = 0;
             int recountdrink = 0;
-            for (int i = 0; i < countmakan + countminum; i++)
+            int ulang = countminum + countmakan;
+            for (int l = 0; l <= ulang + 1; l++)
             {
-                if (listBoxInput.SelectedIndex > -1 && listBoxInput.SelectedItem == makanan[i])
+                for (int i = 0; i <= countmakan; i++)
                 {
-                    listBoxInput.Items.RemoveAt(listBoxInput.SelectedIndex);
-                    recountfood++;
+                    if (listBoxInput.SelectedIndex >= 0 && listBoxInput.SelectedItem.ToString() == makanan[i])
+                    {
+                        listBoxInput.Items.RemoveAt(listBoxInput.SelectedIndex);
+                        recountfood++;
+                        break;
+                    }
                 }
-                else if(listBoxInput.SelectedIndex > -1 && listBoxInput.SelectedItem == minuman[i])
+                //countmakan = countmakan - recountfood;
+                for (int j = 0; j <= countminum; j++)
                 {
-                    listBoxInput.Items.RemoveAt(listBoxInput.SelectedIndex);
-                    recountdrink++;
+                    if (listBoxInput.SelectedIndex >= 0 && listBoxInput.SelectedItem.ToString() == minuman[j])
+                    {
+                        listBoxInput.Items.RemoveAt(listBoxInput.SelectedIndex);
+                        recountdrink++;
+                        break;
+                    }
                 }
+                //countminum = countminum - recountdrink;
             }
             countmakan = countmakan - recountfood;
             countminum = countminum - recountdrink;
+            
+            //for (int i = 0; i <= listBoxList.Items.Count + 1; i++)
+            //{
+            //    if (listBoxList.SelectedIndex > -1 && listBoxList.SelectedItem.ToString() == makanan[i])
+            //    {
+            //        listBoxList.Items.RemoveAt(listBoxList.SelectedIndex);
+            //    }
+            //    if (listBoxList.SelectedIndex > -1 && listBoxList.SelectedItem.ToString() == minuman[i])
+            //    {
+            //        listBoxList.Items.RemoveAt(listBoxList.SelectedIndex);
+            //    }
+            //}
+
+            ulang = listBoxList.Items.Count;
+            for (int l = 0; l <= ulang + 1; l++)
+            {
+                if (listBoxList.SelectedIndex >= 0)
+                {
+                    listBoxList.Items.RemoveAt(listBoxList.SelectedIndex);
+                }
+            }
         }
 
         private void checkBoxMakanan_CheckedChanged(object sender, EventArgs e)
@@ -205,5 +257,12 @@ namespace Makanan_Minuman
             }
         }
 
+        private void linkLabelRemoveSelect_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            listBoxInput.SelectedIndex = -1;
+            listBoxList.SelectedIndex = -1;
+            checkBoxMakanan.Checked = false;
+            checkBoxMinuman.Checked = false;
+        }
     }
 }

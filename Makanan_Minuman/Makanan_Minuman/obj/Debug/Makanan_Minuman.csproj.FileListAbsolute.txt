@@ -1,0 +1,10 @@
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\bin\Debug\Makanan_Minuman.exe.config
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\bin\Debug\Makanan_Minuman.exe
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\bin\Debug\Makanan_Minuman.pdb
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\obj\Debug\Makanan_Minuman.csproj.AssemblyReference.cache
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\obj\Debug\Makanan_Minuman.Form1.resources
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\obj\Debug\Makanan_Minuman.Properties.Resources.resources
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\obj\Debug\Makanan_Minuman.csproj.GenerateResource.cache
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\obj\Debug\Makanan_Minuman.csproj.CoreCompileInputs.cache
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\obj\Debug\Makanan_Minuman.exe
+F:\Dokumen Kuliah\Semester 2\Application Development\Week 8 (UTS)\Tugas-main\Tugas-main\Makanan_Minuman\Makanan_Minuman\obj\Debug\Makanan_Minuman.pdb

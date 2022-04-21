@@ -43,6 +43,7 @@ namespace Makanan_Minuman
             this.checkBoxMinuman = new System.Windows.Forms.CheckBox();
             this.checkBoxMakanan = new System.Windows.Forms.CheckBox();
             this.listBoxList = new System.Windows.Forms.ListBox();
+            this.linkLabelRemoveSelect = new System.Windows.Forms.LinkLabel();
             this.groupBoxRadioBox.SuspendLayout();
             this.groupBoxFilter.SuspendLayout();
             this.SuspendLayout();
@@ -113,9 +114,9 @@ namespace Makanan_Minuman
             this.listBoxInput.FormattingEnabled = true;
             this.listBoxInput.Location = new System.Drawing.Point(16, 216);
             this.listBoxInput.Name = "listBoxInput";
+            this.listBoxInput.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxInput.Size = new System.Drawing.Size(161, 212);
             this.listBoxInput.TabIndex = 4;
-            this.listBoxInput.SelectedIndexChanged += new System.EventHandler(this.listBoxInput_SelectedIndexChanged);
             // 
             // labelKategori
             // 
@@ -184,14 +185,28 @@ namespace Makanan_Minuman
             this.listBoxList.FormattingEnabled = true;
             this.listBoxList.Location = new System.Drawing.Point(349, 216);
             this.listBoxList.Name = "listBoxList";
+            this.listBoxList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxList.Size = new System.Drawing.Size(163, 212);
             this.listBoxList.TabIndex = 9;
+            // 
+            // linkLabelRemoveSelect
+            // 
+            this.linkLabelRemoveSelect.AutoSize = true;
+            this.linkLabelRemoveSelect.Location = new System.Drawing.Point(217, 413);
+            this.linkLabelRemoveSelect.Name = "linkLabelRemoveSelect";
+            this.linkLabelRemoveSelect.Size = new System.Drawing.Size(94, 13);
+            this.linkLabelRemoveSelect.TabIndex = 10;
+            this.linkLabelRemoveSelect.TabStop = true;
+            this.linkLabelRemoveSelect.Text = "Remove Selection";
+            this.linkLabelRemoveSelect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelRemoveSelect.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRemoveSelect_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 450);
+            this.Controls.Add(this.linkLabelRemoveSelect);
             this.Controls.Add(this.listBoxList);
             this.Controls.Add(this.groupBoxFilter);
             this.Controls.Add(this.buttonDelete);
@@ -229,6 +244,7 @@ namespace Makanan_Minuman
         private System.Windows.Forms.CheckBox checkBoxMinuman;
         private System.Windows.Forms.CheckBox checkBoxMakanan;
         private System.Windows.Forms.ListBox listBoxList;
+        private System.Windows.Forms.LinkLabel linkLabelRemoveSelect;
     }
 }
 
